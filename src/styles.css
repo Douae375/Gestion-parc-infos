@@ -6941,7 +6941,11 @@ button.dropdown-item.is-active {
 }
 .navbar.is-fixed-top {
   top: 0;
+  left: 14rem; /* Match the sidebar width */
+  right: 0;
+  z-index: 30;
 }
+
 
 html.has-navbar-fixed-top,
 body.has-navbar-fixed-top {
@@ -12673,6 +12677,8 @@ table.table td.is-progress-col {
 
 section.section.is-main-section {
   padding: 1.5rem;
+  margin-left: 14rem; /* Match the sidebar width */
+  margin-top: 3.25rem; /* Match the navbar height */
 }
 
 .modal-card {
