@@ -1,1 +1,56 @@
-<p>home-user works!</p>
+<div class="content-wrapper pt-5 bg-white min-vh-100">
+    <div class="container text-center">
+      <!-- Welcome message -->
+      <div class="welcome-message my-4">
+        <h1>Welcome to Your Dashboard</h1>
+        <p class="lead">You can create a new ticket for reclamation or request (demande).</p>
+        <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+      </div>
+  
+      <!-- Ticket creation form -->
+      <div class="card mx-auto" style="max-width: 600px;">
+        <div class="card-header">
+          <h2>Create New Ticket</h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <input
+                type="text"
+                id="description"
+                formControlName="description"
+                class="form-control"
+                placeholder="Enter ticket description"
+              />
+            </div>
+  
+            <div class="mb-3">
+              <label for="type" class="form-label">Type</label>
+              <select id="type" formControlName="type" class="form-select">
+                <option value="Reclamation">Reclamation</option>
+                <option value="Demande">Demande</option>
+              </select>
+            </div>
+  
+            <div class="mb-3">
+              <label for="equipement" class="form-label">Equipement</label>
+              <select id="equipement" formControlName="equipementSerie" class="form-select">
+                <option *ngFor="let equip of equipements" [value]="equip.serie">{{ equip.nom }} ({{ equip.modele }})</option>
+              </select>
+            </div>
+  
+            <div class="mb-3">
+              <label for="user" class="form-label">User</label>
+              <select id="user" formControlName="userId" class="form-select">
+                <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
+              </select>
+            </div>
+  
+            <button type="submit" class="btn btn-primary btn-block mt-4">Submit Ticket</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
