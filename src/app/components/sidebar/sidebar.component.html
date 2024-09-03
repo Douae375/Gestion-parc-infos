@@ -1,14 +1,14 @@
 <aside class="aside is-placed-left is-expanded">
   <div class="aside-tools">
     <div class="aside-tools-label">
-      <span><b>Admin</b> One HTML</span>
+      <span><b>Admin</b> Home</span>
     </div>
   </div>
   <div class="menu is-menu-main">
     <p class="menu-label">General</p>
     <ul class="menu-list">
       <li>
-        <a href="#" (click)="selectTable('Dashboard')" class="is-active router-link-active has-icon">
+        <a (click)="selectTable('Dashboard')" [ngClass]="{'is-active': selectedTableType === 'Dashboard'}" class="has-icon">
           <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
           <span class="menu-item-label">Dashboard</span>
         </a>
@@ -17,44 +17,37 @@
     <p class="menu-label">Tables</p>
     <ul class="menu-list">
       <li>
-        <a href="#" (click)="selectTable('Users')" class="has-icon">
+        <a (click)="selectTable('Users')" [ngClass]="{'is-active': selectedTableType === 'Users'}" class="has-icon">
           <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
           <span class="menu-item-label">Users</span>
         </a>
       </li>
       <li>
-        <a href="#" (click)="selectTable('Equipement')" class="has-icon">
+        <a (click)="selectTable('Equipement')" [ngClass]="{'is-active': selectedTableType === 'Equipement'}" class="has-icon">
           <span class="icon"><i class="mdi mdi-settings"></i></span>
           <span class="menu-item-label">Equipement</span>
         </a>
       </li>
       <li>
-        <a href="#" (click)="selectTable('Ticket')" class="has-icon">
+        <a (click)="selectTable('Ticket')" [ngClass]="{'is-active': selectedTableType === 'Ticket'}" class="has-icon">
           <span class="icon"><i class="mdi mdi-ticket"></i></span>
           <span class="menu-item-label">Ticket</span>
         </a>
       </li>
       <li>
-        <a href="#" (click)="selectTable('Departement')" class="has-icon">
+        <a (click)="selectTable('Departement')" [ngClass]="{'is-active': selectedTableType === 'Departement'}" class="has-icon">
           <span class="icon"><i class="mdi mdi-office-building"></i></span>
           <span class="menu-item-label">Departement</span>
         </a>
       </li>
     </ul>
-    <p class="menu-label">About</p>
-    <ul class="menu-list">
-      <li>
-        <a href="#" target="_blank" class="has-icon">
-          <span class="icon"><i class="mdi mdi-github-circle"></i></span>
-          <span class="menu-item-label">GitHub</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="has-icon">
-          <span class="icon"><i class="mdi mdi-help-circle"></i></span>
-          <span class="menu-item-label">About</span>
-        </a>
-      </li>
-    </ul>
+  </div>
+
+  <!-- Logout Button -->
+  <div class="aside-logout">
+    <button (click)="logout()" class="logout-button">
+      <span class="icon"><i class="mdi mdi-logout"></i></span>
+      <span>Logout</span>
+    </button>
   </div>
 </aside>
